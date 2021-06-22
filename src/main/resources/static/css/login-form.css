@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+.login-form{
+    min-height: 800px;
+/*    background-image: url('../img/dog-background.jpg');*/
+    background-color: #FFE082;
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    }
+.login-form{
+    display: flex;
+    align-items:center;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:center;
+    text-align:center;
+}
+.main-div{
+    background: #FFF;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 50%;
+    padding: 50px 70px;
+}
+.form-control{
+    border-radius: 7px;
+    height:50px;
+    border: 2px solid #777777;
+    margin: 9px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1ABC9C;
+  border-color: #1ABC9C;
+  font-size: 1.1em;
+  height:40px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #16a085;
+  border-color: #15967d;
+}
+
+.btn-back {
+  color: #FFF;
+  background-color: #FFB74D;
+  border-color: #FFB74D;
+  font-size: 1.1em;
+  height:40px;
+  width: 60%;
+}
+.btn-back:hover{
+  color: #fff;
+  background-color: #FFA726;
+  border-color: #FFA726;
+}
+.cadastro{
+    margin-bottom: 6px;
+}

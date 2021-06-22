@@ -7,6 +7,7 @@
 
     <link rel="icon" type="image/x-icon" href="img/pet-transportadora.png" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/login-form.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -15,7 +16,30 @@
 
 </head>
 <body>
+    <div class="login-form">
+        <div class="container">
+            <div class="main-div">
+                <div class="text-header">
+                    <h2>Admin Login</h2>
+                    <p>Insira suas credenciais para efetuar login no sistema.</p>
+                </div>
+                <form method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Usuário">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Senha">
+                    </div>
+                    <div class="cadastro">
+                        <a th:href="@{cadastro}">Não tem cadastro? clique aqui.</a>
+                    </div>
+                </form>
+                    <button class="btn btn-primary" type="submit">Login</button>
+                    <a class="btn btn-back" href="/">Voltar</a>
+            </div>
 
+        </div>
+    </div>
 
 </body>
 </html>

@@ -1,19 +1,30 @@
 package com.ifpe.veterinario.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
 
 @Entity
-public class Atendente {
+@Table(name = "usuario")
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Email
     private String email;
+    @Size(min = 4, max = 20, message = "Usuário deve conter entre 3 a 20 caracteres")
+    private String usuario;
     private String senha;
     private String nome;
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
 
     public Long getId() {
         return id;
