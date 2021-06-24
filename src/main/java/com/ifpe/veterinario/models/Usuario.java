@@ -14,16 +14,25 @@ public class Usuario {
     @Email
     private String email;
     @Size(min = 4, max = 20, message = "Usuário deve conter entre 3 a 20 caracteres")
-    private String usuario;
+    private String user;
     private String senha;
     private String nome;
+    private String sobrenome;
 
-    public String getUsuario() {
-        return usuario;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public Long getId() {

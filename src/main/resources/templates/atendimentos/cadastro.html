@@ -23,22 +23,28 @@
                 <h2>Cadastre seu usuário</h2>
                 <p>Insira suas credenciais para efetuar cadastro no sistema.</p>
             </div>
-            <form method="post" th:object="${usuario}" action="salvarUsuario">
+            <form method="post" th:object="${usuario}" th:action="salvarUsuario">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Usuário">
+                    <input type="text" class="form-control" th:field="*{nome}" placeholder="Primeiro nome">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="text" class="form-control" th:field="*{sobrenome}" placeholder="Sobrenome">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Senha">
+                    <input type="text" class="form-control" th:field="*{user}" placeholder="Usuário">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" th:field="*{email}" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" th:field="*{senha}" placeholder="Senha">
                 </div>
                 <div class="cadastro">
                     <a href="/login">Já tem cadastro? clique aqui.</a>
                 </div>
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                <a class="btn btn-back" href="/">Voltar</a>
             </form>
-            <button class="btn btn-primary" type="submit">Login</button>
-            <a class="btn btn-back" href="/">Voltar</a>
         </div>
 
     </div>
