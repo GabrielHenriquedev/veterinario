@@ -32,9 +32,6 @@ public class UsuarioController {
         return mh;
     }
 
-
-
-
     @GetMapping("/login")
     public ModelAndView login(){
         ModelAndView mvl = new ModelAndView("atendimentos/login");
@@ -49,8 +46,9 @@ public class UsuarioController {
         return mvc;
     }
 
+
     @PostMapping("salvarUsuario")
-    public ModelAndView cadastrar(Usuario user) throws Exception{
+    public ModelAndView cadastrando(Usuario user) throws Exception{
         ModelAndView mvc = new ModelAndView();
         serviceUsuario.salvarUsuario(user);
         mvc.setViewName("redirect:/login");
@@ -77,4 +75,11 @@ public class UsuarioController {
         return mvlogin;
     }
 
+    @PostMapping("cadastro")
+    public ModelAndView cadastrar(Usuario usuario){
+        ModelAndView mvc = new ModelAndView("redirect:/atendimentos/login");
+        ur.save(usuario);
+        return mvc;
+
+    }
 }

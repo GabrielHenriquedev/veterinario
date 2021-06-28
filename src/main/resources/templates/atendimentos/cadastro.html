@@ -23,6 +23,7 @@
                 <h2>Cadastre seu usuário</h2>
                 <p>Insira suas credenciais para efetuar cadastro no sistema.</p>
             </div>
+<<<<<<< HEAD
             <form method="post" th:object="${usuario}" th:action="salvarUsuario">
                 <div class="form-group">
                     <input type="text" class="form-control" th:field="*{nome}" placeholder="Primeiro nome">
@@ -38,6 +39,17 @@
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" th:field="*{senha}" placeholder="Senha">
+=======
+            <form method="post" th:object="${usuario}" action="cadastro">
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*{email}" placeholder="digite seu nome de usuário">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" th:field="*{user}" placeholder="Digite seu email">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" th:field="*{senha}" placeholder="Digite sua senha">
+>>>>>>> 660973f86eda816cd7cdc127fbb2cd902cefe070
                 </div>
                 <div class="cadastro">
                     <a href="/login">Já tem cadastro? clique aqui.</a>
@@ -45,6 +57,11 @@
                 <button class="btn btn-primary" type="submit">Cadastrar</button>
                 <a class="btn btn-back" href="/">Voltar</a>
             </form>
+<<<<<<< HEAD
+=======
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+            <a class="btn btn-back" href="/">Voltar</a>
+>>>>>>> 660973f86eda816cd7cdc127fbb2cd902cefe070
         </div>
 
     </div>

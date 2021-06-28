@@ -19,6 +19,7 @@ public class Usuario {
     private String nome;
     private String sobrenome;
 
+
     public String getSobrenome() {
         return sobrenome;
     }
@@ -30,6 +31,7 @@ public class Usuario {
     public String getUser() {
         return user;
     }
+
 
     public void setUser(String user) {
         this.user = user;
