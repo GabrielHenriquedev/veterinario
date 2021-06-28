@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xlmns:th="http://thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=width-device, initial.scale=1.0">
@@ -23,19 +23,23 @@
                     <h2>Admin Login</h2>
                     <p>Insira suas credenciais para efetuar login no sistema.</p>
                 </div>
-                <form method="post">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Usuário">
+                <form th:method="post" th:object="${usuario}" th:action="@{/login}">
+
+                    <div class="alert alert-danger" th:if="${msg}">
+                        <strong th:text="${msg}"></strong>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Senha">
+                        <input type="text" th:field="*{user}" class="form-control" placeholder="Usuário">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" th:field="*{senha}" class="form-control"  placeholder="Senha" >
                     </div>
                     <div class="cadastro">
                         <a th:href="@{cadastro}">Não tem cadastro? clique aqui.</a>
                     </div>
-                </form>
                     <button class="btn btn-primary" type="submit">Login</button>
                     <a class="btn btn-back" href="/">Voltar</a>
+                </form>
             </div>
 
         </div>
