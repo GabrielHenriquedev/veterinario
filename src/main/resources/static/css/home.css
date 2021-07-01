@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+.neo-section{
+    min-height: 400px;
+    padding:30px;
+    width:100%;
+}
+.row-wm{
+    width: 350px;
+    float: left;
+}
+.neo-container{
+   max-width:1200px;
+   padding:2% 2%;
+   margin: 0 auto;
+   margin-top: 120px;
+}
+.center{
+    text-align: center;
+}
+.shadow{
+    width:100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    position:absolute;
+    background: rgba(0,0,0,0.5)
+    z-index: 100;
+}
+
+.btn-grey{
+    border: 2px solid #DFDFDF;
+    font-family:"Lato";
+}
