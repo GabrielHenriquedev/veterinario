@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=width-device, initial.scale=1.0">
+    <title>cadastro do clinte</title>
+
+    <link rel="icon" type="image/x-icon" href="img/pet-transportadora.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+<!--    <link href="css/login-form.css" rel="stylesheet" />-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+<div class="login-form">
+    <div class="container">
+        <div class="main-div">
+            <div class="text-header">
+                <h2>Cadastre o cliente</h2>
+                <p>Insira as credenciais para adicionar um cliente.</p>
+            </div>
+            <form method="post" th:object="${cliente}" th:action="salvarCliente">
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*nome" placeholder="Primeiro nome">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="RG">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="telefone">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div>
+                    <button class="btn btn-primary" type="submit" >Cadastrar</button>
+                    <a class="btn btn-back" href="/">Voltar</a>
+
+                </div>
+        </form>
+
+</body>
+</html>
