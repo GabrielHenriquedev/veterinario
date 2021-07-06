@@ -32,3 +32,9 @@
     border: 2px solid #DFDFDF;
     font-family:"Lato";
 }
+btn-grey:hover{
+    color: #DADADA;
+    background-color: #DFDFDF;
+    font-color: #FFF;
+    font-weight: bold;
+}
