@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=width-device, initial.scale=1.0">
-    <title>Clinica Anima</title>
+    <title>cadastro do clinte</title>
 
     <link rel="icon" type="image/x-icon" href="img/pet-transportadora.png" />
     <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/login-form.css" rel="stylesheet" />
+<!--    <link href="css/login-form.css" rel="stylesheet" />-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -20,29 +20,28 @@
     <div class="container">
         <div class="main-div">
             <div class="text-header">
-                <h2>Cadastre seu usuário</h2>
-                <p>Insira suas credenciais para efetuar cadastro no sistema.</p>
+                <h2>Cadastre o cliente</h2>
+                <p>Insira as credenciais para adicionar um cliente.</p>
             </div>
-            <form method="post" th:object="${usuario}" th:action="salvarUsuario">
+            <form method="post" th:object="${cliente}" th:action="salvarCliente">
                 <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{nome}" placeholder="Primeiro nome">
+                    <input type="text" class="form-control" th:field="*nome" placeholder="Primeiro nome">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{sobrenome}" placeholder="Sobrenome">
+                    <input type="text" class="form-control" placeholder="RG">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{user}" placeholder="Usuário">
+                    <input type="text" class="form-control" placeholder="telefone">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" th:field="*{email}" placeholder="Email">
+                    <input type="email" class="form-control" placeholder="Email">
                 </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" th:field="*{senha}" placeholder="Senha">
+                <div>
+                    <button class="btn btn-primary" type="submit" >Cadastrar</button>
+                    <a class="btn btn-back" href="/">Voltar</a>
 
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
-            <a class="btn btn-back" href="/">Voltar</a>
-
-        </div>
+                </div>
+        </form>
 
 </body>
 </html>
