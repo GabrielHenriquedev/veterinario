@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=width-device, initial.scale=1.0">
-    <title>cadastro do clinte</title>
+    <title>Cadastro do Cliente</title>
 
     <link rel="icon" type="image/x-icon" href="img/pet-transportadora.png" />
     <link href="css/styles.css" rel="stylesheet" />
@@ -25,23 +25,24 @@
             </div>
             <form method="post" th:object="${cliente}" th:action="salvarCliente">
                 <div class="form-group">
-                    <input type="text" class="form-control" th:field="*nome" placeholder="Primeiro nome">
+                    <input type="text" class="form-control" th:field="*{rg}" placeholder="RG">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="RG">
+                    <input type="text" class="form-control" th:field="*{nome}" placeholder="Nome e Sobrenome">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="telefone">
+                    <input type="text" class="form-control" th:field="*{telefone}" placeholder="telefone">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" th:field="*{email}" placeholder="Email">
                 </div>
+                <br>
                 <div>
                     <button class="btn btn-primary" type="submit" >Cadastrar</button>
                     <a class="btn btn-back" href="/">Voltar</a>
 
                 </div>
-        </form>
+            </form>
 
 </body>
 </html>
