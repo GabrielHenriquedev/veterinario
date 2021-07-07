@@ -6,11 +6,11 @@
     width:100%;
 }
 .row-wm{
-    width: 350px;
+    width: 300px;
     float: left;
 }
 .neo-container{
-   max-width:1200px;
+   max-width:2200px;
    padding:2% 2%;
    margin: 0 auto;
    margin-top: 120px;
@@ -31,6 +31,9 @@
 .btn-grey{
     border: 2px solid #DFDFDF;
     font-family:"Lato";
+}
+.btn-grey a{
+    color: black;
 }
 btn-grey:hover{
     color: #DADADA;
