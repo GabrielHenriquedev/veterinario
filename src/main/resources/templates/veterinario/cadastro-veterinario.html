@@ -1,0 +1,48 @@
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=width-device, initial.scale=1.0">
+    <title>Cadastro de Veterinário</title>
+
+    <link rel="icon" type="image/x-icon" href="img/pet-transportadora.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!--    <link href="css/login-form.css" rel="stylesheet" />-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+
+<body>
+    <div th:replace="fragmentos/fragmentos :: loggedHome"></div>
+    <br>
+    <div class="login-form">
+        <div class="container">
+            <div class="main-div">
+                <div class="text-header">
+                    <h2>Cadastre o veterinário</h2>
+                    <p>Cadastro de Veterinário</p>
+                </div>
+                <form method="post" th:object="${veterinario}" th:action="salvarVeterinario">
+                    <div class="form-group">
+                        <input type="text" class="form-control" th:field="*{nome}" placeholder="Nome e Sobrenome">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" th:field="*{telefone}" placeholder="telefone">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" th:field="*{email}" placeholder="Email">
+                    </div>
+                    <br>
+                    <div>
+                        <button class="btn btn-primary" type="submit" >Cadastrar</button>
+                        <a class="btn btn-back" th:href="@{home}">Voltar</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
