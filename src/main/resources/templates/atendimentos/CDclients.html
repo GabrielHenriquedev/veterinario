@@ -16,33 +16,35 @@
 
 </head>
 <body>
-<div class="login-form">
-    <div class="container">
-        <div class="main-div">
-            <div class="text-header">
-                <h2>Cadastre o cliente</h2>
-                <p>Insira as credenciais para adicionar um cliente.</p>
+        <div class="login-form">
+            <div class="container">
+                <div class="main-div">
+                    <div class="text-header">
+                        <h2>Cadastre o cliente</h2>
+                        <p>Insira as credenciais para adicionar um cliente.</p>
+                    </div>
+                    <form method="post" th:object="${cliente}" th:action="salvarCliente">
+                        <div class="form-group">
+                            <input type="text" class="form-control" th:field="*{rg}" placeholder="RG">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" th:field="*{nome}" placeholder="Nome e Sobrenome">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" th:field="*{telefone}" placeholder="telefone">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" th:field="*{email}" placeholder="Email">
+                        </div>
+                        <br>
+                        <div>
+                            <button class="btn btn-primary" type="submit" >Cadastrar</button>
+                            <a class="btn btn-back" th:href="@{home}">Voltar</a>
+
+                        </div>
+                    </form>
+                </div>
             </div>
-            <form method="post" th:object="${cliente}" th:action="salvarCliente">
-                <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{rg}" placeholder="RG">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{nome}" placeholder="Nome e Sobrenome">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" th:field="*{telefone}" placeholder="telefone">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" th:field="*{email}" placeholder="Email">
-                </div>
-                <br>
-                <div>
-                    <button class="btn btn-primary" type="submit" >Cadastrar</button>
-                    <a class="btn btn-back" th:href="@{home}">Voltar</a>
-
-                </div>
-            </form>
-
+        </div>
 </body>
 </html>
