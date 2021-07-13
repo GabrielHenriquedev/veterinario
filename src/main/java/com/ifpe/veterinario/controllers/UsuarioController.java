@@ -1,7 +1,9 @@
 package com.ifpe.veterinario.controllers;
 
 
+import com.ifpe.veterinario.models.Cliente;
 import com.ifpe.veterinario.models.Usuario;
+import com.ifpe.veterinario.repositiry.ClienteRepository;
 import com.ifpe.veterinario.repositiry.UsuarioRepository;
 import com.ifpe.veterinario.exceptions.LoginServiceException;
 import com.ifpe.veterinario.service.ServiceUsuario;
@@ -25,10 +27,15 @@ public class UsuarioController {
     @Autowired
     private ServiceUsuario serviceUsuario;
 
+    @Autowired
+    private ClienteRepository cr;
+
 
     @GetMapping("/home")
     public ModelAndView home(){
         ModelAndView mh = new ModelAndView("atendimentos/home");
+        Iterable<Cliente> findClientes = cr.findAll();
+        mh.addObject("clientes", findClientes);
         return mh;
     }
 

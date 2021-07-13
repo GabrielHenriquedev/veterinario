@@ -33,11 +33,44 @@
                 <button class="btn btn-grey"> CADASTRAR PET DE CLIENTE</button>
             </div>
             <div class="row-wm">
-                <button class="btn btn-grey"><a th:href="@{cadastro-veterinario}"> CADASTRAR VETERINÁRIO </a></button>
+                <button class="btn btn-grey"><a th:href="@{cadastro-cliente}"> CADASTRAR VETERINÁRIO </a></button>
             </div>
         </div>
     </section>
+    <section>
 
-<!--    <div th:replace="fragmentos/fragmentos :: footer"></div>-->
+        <div class="text-header center">
+            <h2>Tabela de Clientes</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Nome do Cliente</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="cliente: ${clientes}">
+                            <td><a th:href="@{/{codigo}(codigo = ${cliente.rg})}"><span th:text="${cliente.nome}"></span></a></td>
+                            <td><span th:text="${cliente.telefone}"></span></td>
+                            <td><span th:text="${cliente.email}"></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <div>
+
+
+    <!--    <div th:replace="fragmentos/fragmentos :: footer"></div>-->
 </body>
 </html>

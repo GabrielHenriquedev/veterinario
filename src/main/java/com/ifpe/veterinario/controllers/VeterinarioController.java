@@ -21,7 +21,7 @@ public class VeterinarioController {
     @GetMapping("/veterinarios")
     public ModelAndView veterinarios(){
         ModelAndView vet = new ModelAndView("veterinario/index");
-        Iterable<Veterinario> veterinarios =vr.findAll();
+        Iterable<Veterinario> veterinarios = vr.findAll();
         vet.addObject("veterinarios", veterinarios);
 
         return vet;
