@@ -13,5 +13,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     @Query("select uLogin from Usuario uLogin where uLogin.user = :user and uLogin.senha = :senha")
     public Usuario buscarLogin(String user, String senha);
+
+
 }
 

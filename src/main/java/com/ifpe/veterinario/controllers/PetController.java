@@ -21,12 +21,12 @@ public class PetController {
         ModelAndView cd = new ModelAndView( "atendimentos/PetCD");
         return cd;
     }
-    @PostMapping("salvarpet")
-    public ModelAndView cadastropet(Pet pet){
-        ModelAndView cd = new ModelAndView();
-        er.save(pet);
-        cd.setViewName("redirect:/home");
-        return cd;
-
-    }
+//    @PostMapping("salvarpet")
+//    public ModelAndView cadastropet(Pet pet){
+//        ModelAndView cd = new ModelAndView();
+//        er.save(pet);
+//        cd.setViewName("redirect:/home");
+//        return cd;
+//
+//    }
 }

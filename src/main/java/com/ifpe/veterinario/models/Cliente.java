@@ -1,7 +1,9 @@
 package com.ifpe.veterinario.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.List;
+
 
 @Entity
 public class Cliente {
@@ -11,6 +13,14 @@ public class Cliente {
     private String nome;
     private String email;
     private String telefone;
+
+    @OneToMany(mappedBy = "dono")
+    private List<Pet> pet;
+
+    @OneToMany
+    @JoinColumn(name="telefone_emergencial")
+    private List<Telefone> emergencial;
+
 
     public String getRg() {
         return rg;

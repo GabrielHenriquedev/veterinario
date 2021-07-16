@@ -1,9 +1,7 @@
 package com.ifpe.veterinario.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 public class Pet {
@@ -11,8 +9,25 @@ public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String nome;
+    @Column(name="raça")
     private String raca;
+
+    @OneToOne
+    private Cliente dono;
+
+    public Pet(Cliente dono) {
+        this.dono = dono;
+    }
+
+    public Cliente getDono() {
+        return dono;
+    }
+
+    public void setDono(Cliente dono) {
+        this.dono = dono;
+    }
 
     public Long getId() {
         return id;

@@ -9,9 +9,7 @@ public class Telefone {
 
     @Id
     private String id;
-
-    @ManyToOne
-    private Cliente idCliente;
-
+//    @ManyToOne
+//    private Cliente idCliente;
     private String telefone;
 }
