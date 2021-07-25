@@ -2,6 +2,7 @@ package com.ifpe.veterinario.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -13,7 +14,9 @@ public class Usuario {
     private Long id;
     @Email
     private String email;
-    @Size(min = 4, max = 20, message = "Usuário deve conter entre 3 a 20 caracteres")
+
+    @NotEmpty(message = "{NotEmpty.Usuario.User}")
+    @Size(min = 4, max = 20, message = "{Size.Usuario.User}")
     private String user;
     private String senha;
     private String nome;

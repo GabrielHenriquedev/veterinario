@@ -1,5 +1,7 @@
 package com.ifpe.veterinario.models;
 
+import com.ifpe.veterinario.Enums.Raca;
+
 import javax.persistence.*;
 import java.util.Optional;
 
@@ -11,12 +13,24 @@ public class Pet {
     private Long id;
 
     private String nome;
+
     @Column(name="raça")
-    private String raca;
+    @Enumerated(EnumType.STRING)
+    private Raca raca;
 
     @OneToOne
     private Cliente dono;
 
+    public Pet(){}
+    //Construtor geral do Pet
+    public Pet(Long id, String nome, Raca raca, Cliente dono) {
+        this.id = id;
+        this.nome = nome;
+        this.raca = raca;
+        this.dono = dono;
+    }
+
+    //construtor Pet para salvar dono
     public Pet(Cliente dono) {
         this.dono = dono;
     }
@@ -45,11 +59,11 @@ public class Pet {
         this.nome = nome;
     }
 
-    public String getRaca() {
+    public Enum getRaca() {
         return raca;
     }
 
-    public void setRaca(String raca) {
+    public void setRaca(Raca raca) {
         this.raca = raca;
     }
 }

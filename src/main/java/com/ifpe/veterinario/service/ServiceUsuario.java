@@ -20,6 +20,7 @@ public class ServiceUsuario {
     public void salvarUsuario(Usuario user) throws Exception{
 
         try{
+            //verifica se o usuario já existe
             if (userRep.findByEmail(user.getEmail()) != null){
                 throw new EmailExistsException("O email: " + user.getEmail() + " já se encontra na nossa base de dados");
             }
@@ -31,6 +32,7 @@ public class ServiceUsuario {
         userRep.save(user);
     }
 
+    //efetua o login de usuario
     public Usuario loginUser(String user, String senha) throws LoginServiceException {
 
         Usuario userLogin = userRep.buscarLogin(user, senha);

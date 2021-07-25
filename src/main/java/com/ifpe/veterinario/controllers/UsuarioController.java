@@ -34,6 +34,7 @@ public class UsuarioController {
     @GetMapping("/home")
     public ModelAndView home(){
         ModelAndView mh = new ModelAndView("atendimentos/home");
+        //select * from Clientes
         Iterable<Cliente> findClientes = cr.findAll();
         mh.addObject("clientes", findClientes);
         return mh;
@@ -42,6 +43,7 @@ public class UsuarioController {
     @GetMapping("/login")
     public ModelAndView login(){
         ModelAndView mvl = new ModelAndView("atendimentos/login");
+        //verifica se há algum objeto Usuario e o instancia
         mvl.addObject("usuario", new Usuario());
         return mvl;
     }
@@ -49,6 +51,7 @@ public class UsuarioController {
     @GetMapping("/cadastro")
     public ModelAndView cadastrar(){
         ModelAndView mvc = new ModelAndView("atendimentos/cadastro");
+        //verifica se há algum objeto Usuario e o instancia
         mvc.addObject("usuario", new Usuario());
         return mvc;
     }
@@ -67,9 +70,13 @@ public class UsuarioController {
         ModelAndView mvlogin = new ModelAndView("atendimentos/home", "usuario", new Usuario());
 //        mvlogin.addObject("usuario", new Usuario());
 
+        // verificação se há algum erro nos dados enviados
         if (result.hasErrors()){
+            //caso haja erro volta para a tela de login
             mvlogin.setViewName("atendimentos/login");
         }
+        //verificação se o usuário existe no banco de dados
+        //verificando hash md5 da senha para saber se bate
         Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), Util.md5(usuario.getSenha()));
         if (userLogin == null){
             mvlogin.addObject("msg", "Usuário não encontrado.");

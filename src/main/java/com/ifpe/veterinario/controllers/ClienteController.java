@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -41,14 +42,7 @@ public class ClienteController {
     @GetMapping("/{rg}")
     public ModelAndView detalhesCliente(@PathVariable("rg") String rg){
         Cliente cliente = cr.findByRg(rg);
-        System.out.println("*************************************************************************");
-        System.out.println("*************************************************************************");
-        System.out.println("*************************************************************************");
-        System.out.println(rg);
-        System.out.println(cliente);
-        System.out.println("*************************************************************************");
-        System.out.println("*************************************************************************");
-        System.out.println("*************************************************************************");
+
         ModelAndView cd = new ModelAndView("clientes/detalhe-cliente", "petCliente", new Pet(cliente));
         cd.addObject("clienteDetails", cliente);
         return cd;

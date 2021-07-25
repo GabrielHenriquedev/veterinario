@@ -9,7 +9,37 @@ public class Telefone {
 
     @Id
     private String id;
-//    @ManyToOne
-//    private Cliente idCliente;
+    @ManyToOne
+    private Cliente idCliente;
     private String telefone;
+
+    public Telefone(String id, Cliente idCliente, String telefone) {
+        this.id = id;
+        this.idCliente = idCliente;
+        this.telefone = telefone;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Cliente getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Cliente idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 }

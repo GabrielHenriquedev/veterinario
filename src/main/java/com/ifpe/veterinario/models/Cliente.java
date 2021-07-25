@@ -21,6 +21,22 @@ public class Cliente {
     @JoinColumn(name="telefone_emergencial")
     private List<Telefone> emergencial;
 
+    public Cliente(){
+
+    }
+
+    //construtor geral de Clientes
+    public Cliente(String rg, String nome, String email, String telefone) {
+        this.rg = rg;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+    }
+
+    //construtor para telefones de Cliente
+    public Cliente(List<Telefone> emergencial) {
+        this.emergencial = emergencial;
+    }
 
     public String getRg() {
         return rg;

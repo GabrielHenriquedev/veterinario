@@ -35,8 +35,17 @@
                 <div class="form-group col-sm">
                     <form th:action="@{/{rg}(rg = ${cliente.rg})}" method="post"  th:object="${petCliente}">
                         <h3>Adicione o nome de seu Pet</h3>
-                        <input type="text" th:field="*{nome}" class="form-control" placeholder="Nome do Pet">
-                        <input type="text" th:field="*{raca}" class="form-control" placeholder="Raça">
+                        <div class="row">
+                            <input type="text" th:field="*{nome}" class="form-control" placeholder="Nome do Pet">
+                        </div>
+<!--                        <input type="text" th:field="*{raca}" class="form-control" placeholder="Raça">-->
+                        <div class="row">
+                            <label>Selecione a Raça</label>
+                            <select class="form-control" th:field="*{raca}">
+                                <option th:each="raca : ${T(com.ifpe.veterinario.Enums.Raca).values()}"
+                                th:value="${raca}" th:text="${raca}"></option>
+                            </select>
+                        </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Salvar Pet <i class="fas fa-plus"></i></button>
                     </form>
@@ -46,7 +55,17 @@
             </div>
             
         </div>
+        <div class="container">
+            <div class="header">
+                <h1>Pets do Cliente</h1>
+            </div>
 
+<!--            <div th:each="pets : ${allPets}">-->
+<!--                <p><span th:text="pets.nome"></span></p>-->
+<!--                <p><span th:text="pets.raca"></span></p>-->
+<!--            </div>-->
+
+        </div>
 
 
     </div>
