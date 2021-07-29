@@ -13,4 +13,7 @@ public enum Raca {
         this.pet = pet;
     }
 
+    public String getPet() {
+        return pet;
+    }
 }

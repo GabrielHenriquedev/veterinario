@@ -2,8 +2,11 @@ package com.ifpe.veterinario.controllers;
 
 import com.ifpe.veterinario.models.Cliente;
 import com.ifpe.veterinario.models.Pet;
+import com.ifpe.veterinario.models.Telefone;
 import com.ifpe.veterinario.repositiry.ClienteRepository;
 import com.ifpe.veterinario.repositiry.PetRepository;
+import com.ifpe.veterinario.repositiry.TelefoneRepository;
+import com.ifpe.veterinario.service.ServiceTelefone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,10 +28,16 @@ public class ClienteController {
     @Autowired
     private PetRepository pr;
 
+    @Autowired
+    private ServiceTelefone serviceTelefone;
+
+    @Autowired
+    private TelefoneRepository tr;
+
 
     @GetMapping("/cadastro-cliente")
     public ModelAndView cadastroCliente(){
-        ModelAndView cd = new ModelAndView( "atendimentos/CDclients", "cliente", new Cliente());
+        ModelAndView cd = new ModelAndView( "atendimentos/cadastroCliente", "cliente", new Cliente());
         return cd;
     }
     @PostMapping("salvarCliente")
@@ -40,11 +49,12 @@ public class ClienteController {
 
     }
     @GetMapping("/{rg}")
-    public ModelAndView detalhesCliente(@PathVariable("rg") String rg){
+    public ModelAndView detalhesCliente(@PathVariable("rg") String rg) throws Exception{
         Cliente cliente = cr.findByRg(rg);
-
+//        List<Telefone> telefone= serviceTelefone.findByOwnerRg(rg);
         ModelAndView cd = new ModelAndView("clientes/detalhe-cliente", "petCliente", new Pet(cliente));
         cd.addObject("clienteDetails", cliente);
+//        cd.addObject("telefones", telefone);
         return cd;
     }
     @PostMapping("/{rg}")

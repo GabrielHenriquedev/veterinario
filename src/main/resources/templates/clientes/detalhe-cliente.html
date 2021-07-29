@@ -14,8 +14,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h1>Detalhe do Cliente</h1>
+
     <div class="container">
+        <h1>Detalhe do Cliente</h1>
         <div th:each="cliente : ${clienteDetails}">
             <div class="row">
                 <div class="col-sm">
@@ -56,8 +57,17 @@
             
         </div>
         <div class="container">
-            <div class="header">
-                <h1>Pets do Cliente</h1>
+<!--            <div class="header">-->
+<!--                <h1>Pets do Cliente</h1>-->
+<!--            </div>-->
+            <div class="row"></div>
+            <div class="row">
+                <div class="header">
+                    <h1>Telefones para Contato</h1>
+                    <div th:each="telefone : ${telefones}">
+                        <p><span th:text="${telefone.telefone}"></span></p>
+                    </div>
+                </div>
             </div>
 
 <!--            <div th:each="pets : ${allPets}">-->

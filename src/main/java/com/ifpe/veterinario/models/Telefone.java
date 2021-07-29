@@ -6,7 +6,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Telefone {
-
+//A classe teleffone é responsável pelos números extras do cliente
     @Id
     private String id;
     @ManyToOne
@@ -17,6 +17,9 @@ public class Telefone {
         this.id = id;
         this.idCliente = idCliente;
         this.telefone = telefone;
+    }
+    public Telefone(){
+
     }
 
     public String getId() {

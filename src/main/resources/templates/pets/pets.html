@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=width-device, initial.scale=1.0">
+    <title>Clinica Anima</title>
+
+    <link rel="icon" type="image/x-icon" href="img/pet-transportadora.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+<div th:replace="fragmentos/fragmentos :: loggedHome"></div>
+
+       <div class="text-header center">
+        <h2>Tabela de pets</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nome do pet</th>
+<!--                        <th scope="col">Raça</th>-->
+                        <th scope="col">Dono</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="pet: ${pets}">
+<!--                        <td><a th:href="@{/{codigo}(codigo = ${pet.rg})}"><span th:text="${pet.nome}"></span></a></td>-->
+                        <td><span th:text="${pet.nome}"></span></td>
+<!--                        <td><span th:text="${pet.raca}"></span></td>-->
+                        <td><span th:text="${pet.dono}"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<div>
+
+
+    <!--    <div th:replace="fragmentos/fragmentos :: footer"></div>-->
+</body>
+</html>

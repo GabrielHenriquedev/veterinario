@@ -29,11 +29,11 @@
             <div class="row-wm">
                 <button class="btn btn-grey"><a th:href="@{cadastro-cliente}">CADASTRAR CLIENTE</a></button>
             </div>
+<!--            <div class="row-wm">-->
+<!--                <button class="btn btn-grey"> CADASTRAR PET DE CLIENTE</button>-->
+<!--            </div>-->
             <div class="row-wm">
-                <button class="btn btn-grey"> CADASTRAR PET DE CLIENTE</button>
-            </div>
-            <div class="row-wm">
-                <button class="btn btn-grey"><a th:href="@{cadastro-veterinario}"> CADASTRAR VETERINÁRIO </a></button>
+                <button class="btn btn-grey"><a th:href="@{cadastro-veterinario}">CADASTRAR VETERINÁRIO </a></button>
             </div>
         </div>
     </section>
@@ -49,6 +49,7 @@
                         <thead>
                         <tr>
                             <th scope="col">Nome do Cliente</th>
+                            <th scope="col">Rg</th>
                             <th scope="col">Telefone</th>
                             <th scope="col">Email</th>
                         </tr>
@@ -56,6 +57,7 @@
                         <tbody>
                         <tr th:each="cliente: ${clientes}">
                             <td><a th:href="@{/{codigo}(codigo = ${cliente.rg})}"><span th:text="${cliente.nome}"></span></a></td>
+                            <td><span th:text="${cliente.rg}"></span></td>
                             <td><span th:text="${cliente.telefone}"></span></td>
                             <td><span th:text="${cliente.email}"></span></td>
                         </tr>
