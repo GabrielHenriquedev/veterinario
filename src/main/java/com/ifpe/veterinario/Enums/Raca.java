@@ -9,11 +9,17 @@ public enum Raca {
 
     private String pet;
 
+
     private Raca(String pet){
         this.pet = pet;
     }
 
     public String getPet() {
         return pet;
+    }
+
+    @Override
+    public String toString() {
+        return ""+ pet + "";
     }
 }

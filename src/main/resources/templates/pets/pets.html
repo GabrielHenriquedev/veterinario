@@ -28,7 +28,7 @@
                     <thead>
                     <tr>
                         <th scope="col">Nome do pet</th>
-<!--                        <th scope="col">Raça</th>-->
+                        <th scope="col">Raça</th>
                         <th scope="col">Dono</th>
                     </tr>
                     </thead>
@@ -36,8 +36,8 @@
                     <tr th:each="pet: ${pets}">
 <!--                        <td><a th:href="@{/{codigo}(codigo = ${pet.rg})}"><span th:text="${pet.nome}"></span></a></td>-->
                         <td><span th:text="${pet.nome}"></span></td>
-<!--                        <td><span th:text="${pet.raca}"></span></td>-->
-                        <td><span th:text="${pet.dono}"></span></td>
+                        <td><span th:text="${pet.raca.toString()}"></span></td>
+                        <td><span th:text="${pet.dono.getNome()}"></span></td>
                     </tr>
                     </tbody>
                 </table>

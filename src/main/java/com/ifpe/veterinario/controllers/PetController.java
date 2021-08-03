@@ -3,6 +3,7 @@ package com.ifpe.veterinario.controllers;
 
 
 
+import com.ifpe.veterinario.Enums.Raca;
 import com.ifpe.veterinario.models.Pet;
 import com.ifpe.veterinario.repositiry.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +12,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.thymeleaf.expression.Strings;
 
+import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
 
 @Controller
 public class PetController {
     @Autowired
-    private PetRepository er;
+    private PetRepository petRepository;
 
     @GetMapping("/cadastro-pet")
     public ModelAndView cadastroPet(){
@@ -37,9 +41,7 @@ public class PetController {
     //listar todos os pets
     public ModelAndView todosPets(){
         ModelAndView tp = new ModelAndView("pets/pets");
-        //PROBLEMA: os enums estão dando um erro no retorno.
-        List<Pet> pets = er.findAll();
-        tp.addObject("pets", pets);
+        tp.addObject("pets", petRepository.findAll());
 
         return tp;
     }
