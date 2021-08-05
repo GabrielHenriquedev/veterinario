@@ -52,6 +52,7 @@
                             <th scope="col">Rg</th>
                             <th scope="col">Telefone</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Ações</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -60,6 +61,10 @@
                             <td><span th:text="${cliente.rg}"></span></td>
                             <td><span th:text="${cliente.telefone}"></span></td>
                             <td><span th:text="${cliente.email}"></span></td>
+                            <td>
+                                <a th:href="@{/alterar/{codigo}(codigo = ${cliente.rg})}" class="btn btn-success">Editar</a>
+                                <a th:href="@{/excluir/{codigo}(codigo = ${cliente.rg})}" class="btn btn-danger">Excluir</a>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
